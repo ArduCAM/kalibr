@@ -4,7 +4,15 @@ project(aslam_cameras_april)
 find_package(catkin_simple REQUIRED)
 catkin_simple()
 
+include(~/opencv-2.4.13.6/build/OpenCVConfig.cmake)
+set(OpenCV_FOUND 1)
+include_directories( ${OpenCV_INCLUDE_DIRS})
+set(OpenCV_DIR ~/opencv-2.4.13.6/build)
 find_package(OpenCV REQUIRED)
+
+
+#find_package(OpenCV REQUIRED)
+
 
 ADD_DEFINITIONS(-DASLAM_USE_ROS )
 include_directories(${Eigen_INCLUDE_DIRS})
