@@ -16,7 +16,15 @@ catkin_package(
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake/)
 
 find_package(Eigen REQUIRED)
+
+include(~/opencv-2.4.13.6/build/OpenCVConfig.cmake)
+set(OpenCV_FOUND 1)
+include_directories( ${OpenCV_INCLUDE_DIRS})
+set(OpenCV_DIR ~/opencv-2.4.13.6/build)
 find_package(OpenCV REQUIRED)
+
+
+#find_package(OpenCV REQUIRED)
 
 add_definitions(-fPIC -O3)
 include_directories(include  ${Eigen_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
