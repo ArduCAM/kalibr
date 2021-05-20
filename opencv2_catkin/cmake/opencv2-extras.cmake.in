@@ -1,4 +1,8 @@
-find_package(OpenCV)
+include(~/opencv-2.4.13.6/build/OpenCVConfig.cmake)
+set(OpenCV_FOUND 1)
+include_directories( ${OpenCV_INCLUDE_DIRS})
+set(OpenCV_DIR ~/opencv-2.4.13.6/build)
+find_package(OpenCV REQUIRED)
 #      - OpenCV_LIBS                     : The list of libraries to links against.
 #      - OpenCV_LIB_DIR                  : The directory(es) where lib files are. Calling LINK_DIRECTORIES
 #                                          with this path is NOT needed.
